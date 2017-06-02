@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<!--
+	Parallelism by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Parallelism by HTML5 UP</title>
+		<meta name="viewport" content="width=1200,user-scalable=no" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+{##}
+        {% block page-styles %}
+			<link rel="stylesheet" href="{{ STATIC_URL }}css/style-desktop.css" />
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}assets/css/bootstrap.min.css">
+             <!-- Main Style -->
+            <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}assets/css/main.css">
+
+            <!--Icon Fonts-->
+            <link rel="stylesheet" media="screen" href="{{ STATIC_URL }}assets/fonts/font-awesome/font-awesome.min.css" />
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+        {% endblock %}
+	</head>
+	<body>
+    {% block page-content %}
+
+		<div id="wrapper">
+
+            <section id="pricing-table">
+            <div class="container">
+            <h1 style="text-align: center">Vote for your favourite candidate</h1>
+                <div class="row">
+                    <div class="pricing">
+                        {% for candidate in candidates %}
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <img src="{{ STATIC_URL }}images/{{ candidate.name }}" style="height:400px; width: 500px">
+
+
+                                </div>
+
+                                <div class="pricing-list">
+                                    <i class="fa fa-thumbs-o-up" style="padding-right: 480px; padding-left: 20px"></i>
+                                    <i class="fa fa-thumbs-down"></i>
+
+                                    <ul>
+                                        <li><i class="fa fa-thumbs-o-up"></i>1,000</li>
+                                        <li><i class="fa fa-thumbs-down"></i><span>500</span> data</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+		</div>
+    {% endblock %}
+
+	</body>
+</html>

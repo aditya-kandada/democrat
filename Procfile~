@@ -1,0 +1,1 @@
+web: gunicorn carneylabs_site.wsgi
